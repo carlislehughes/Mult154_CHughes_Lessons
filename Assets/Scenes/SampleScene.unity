@@ -584,6 +584,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &2094356051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2094356052}
+  - component: {fileID: 2094356053}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2094356052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094356051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9379314, y: 0.999588, z: -0.6212934}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2094356053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094356051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bcb8617c45b71247b5453bad23b5ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lilypadObjs:
+  - {fileID: 3388870869770335472, guid: 97ab25d68081e0c46935f5722e2dd3e7, type: 3}
+  - {fileID: 5113947796786325068, guid: 3414546162443cc4bac51bfb810a352d, type: 3}
+  - {fileID: 7536446897479671471, guid: 08bf19824e855ae4b90abef988f16054, type: 3}
+  - {fileID: 5575100319746018876, guid: 96c31546d2781fe41a102cb34dc2b232, type: 3}
+  - {fileID: 7322613423332271007, guid: 22347de8472ac97448b61d23bb6aea9c, type: 3}
+  - {fileID: 4034904593654236375, guid: ef6e4f8031b435043a4aa68759e71117, type: 3}
 --- !u!1 &2136500347
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,3 +760,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46567c33c41509248b7b1edb328ce9fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
