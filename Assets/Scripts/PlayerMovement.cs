@@ -20,9 +20,9 @@ public class PlayerMovement : NetworkBehaviour
 
         rbPlayer = GetComponent<Rigidbody>();
         spawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
-        
+
     }
-    
+
 
     private void Update()
     {
@@ -43,7 +43,7 @@ public class PlayerMovement : NetworkBehaviour
 
         rbPlayer.AddForce(direction * speed, ForceMode.Force);
 
-        if(transform.position.z > 40)
+        if (transform.position.z > 40)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, 40);
         }
@@ -56,10 +56,12 @@ public class PlayerMovement : NetworkBehaviour
     private void Respawn()
     {
         int index = 0;
-        while(Physics.CheckBox(spawnPoints[index].transform.position, new Vector3(1.5f, 1.5f, 1.5f))){
+        while (Physics.CheckBox(spawnPoints[index].transform.position, new Vector3(1.5f, 1.5f, 1.5f)))
+        {
             index++;
         }
         rbPlayer.MovePosition(spawnPoints[index].transform.position);
+        rbPlayer.velocity = Vector3.zero;
     }
 
 
@@ -74,6 +76,16 @@ public class PlayerMovement : NetworkBehaviour
         {
             Respawn();
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(transform.position, direction * 10);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawRay(transform.position, rbPlayer.velocity * 5);
+
     }
 
 
