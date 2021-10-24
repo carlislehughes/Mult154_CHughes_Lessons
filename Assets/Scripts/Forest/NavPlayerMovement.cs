@@ -55,6 +55,10 @@ public class NavPlayerMovement : MonoBehaviour
         {
             anim.SetTrigger("Die");
         }
+        else
+        {
+            anim.SetTrigger("TwitchLeftEar");
+        }
     }
 }
 
