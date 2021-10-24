@@ -460,6 +460,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4e2e20174ce91444a8ef77b7be1afcc0, type: 2}
+    - target: {fileID: 9500000, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0962bdca27eaca34aaa15f7fdf608faf, type: 3}
 --- !u!1 &247736132
@@ -1059,7 +1067,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439091323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3, z: 16.1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 16.1}
   m_LocalScale: {x: 120, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1412,7 +1420,7 @@ GameObject:
   - component: {fileID: 680413745}
   m_Layer: 0
   m_Name: Swarm
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3190,7 +3198,7 @@ GameObject:
   - component: {fileID: 1715602028}
   m_Layer: 0
   m_Name: Bear
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
