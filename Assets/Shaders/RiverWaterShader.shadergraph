@@ -2053,7 +2053,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "1a00ff2fbf7a4ba3bac847d4116ca5a5",
     "m_Id": 0,
-    "m_DisplayName": "Float",
+    "m_DisplayName": "SecondaryHilightSize",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
