@@ -33,6 +33,7 @@ public class RiverState : PlayerState
     public RiverState(NetworkBehaviour thisObj) : base(thisObj)
     {
         stateName = "RiverLevel";
+        GameData.gamePlayStart = Time.time;
     }
 
     // Start is called before the first frame update
@@ -181,7 +182,7 @@ public class ForestState : PlayerState
         if (collision.collider.CompareTag("Hazard"))
         {
             anim.SetTrigger("Die");
-            thisObject.StartCoroutine(ZoomOut());
+            //thisObject.StartCoroutine(ZoomOut());
         }
         else
         {
@@ -189,7 +190,7 @@ public class ForestState : PlayerState
         }
     }
 
-    IEnumerator ZoomOut()
+    /**IEnumerator ZoomOut()
     {
         const int ITERATIONS = 25;
         for (int z = 0; z < ITERATIONS; z++)
@@ -197,13 +198,18 @@ public class ForestState : PlayerState
             camera.transform.Translate(camera.transform.forward * -1 * 15.0f / ITERATIONS);
             yield return new WaitForSeconds(1.0f / ITERATIONS);
         }
-    }
+    }**/
 
     public override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hazard"))
         {
             thisObject.StartCoroutine(LookAndLookAway(lookTarget.position, other.transform.position));
+        }
+        else if (other.CompareTag("Exit"))
+        {
+            NetworkManager networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+            networkManager.ServerChangeScene("EndScene");
         }
     }
     public override void OnTriggerExit(Collider other)
@@ -249,12 +255,19 @@ public class PlayerContext : NetworkBehaviour
         {
             currentState = new RiverState(this);
         }
-        if (SceneManager.GetActiveScene().name == "ForestLevel")
+        else if (SceneManager.GetActiveScene().name == "ForestLevel")
         {
             currentState = new ForestState(this);
         }
+        else
+        {
+            this.gameObject.SetActive(false);
+        }
 
-        currentState.Start();
+        if (currentState != null)
+        {
+            currentState.Start();
+        }
     }
 
     // Update is called once per frame
